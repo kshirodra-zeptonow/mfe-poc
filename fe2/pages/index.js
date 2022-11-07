@@ -12,12 +12,20 @@ const ClientApp = dynamic(() => import('reactApp/App'), {
 // const ServerApp = React.lazy( () => import('reactApp/App'));
 
 
-export default function Home() {
+const Home = () => {
+  const clickMe = (data) => {
+    alert(data)
+  }
   return (
     <div className={styles.container}>
      {/* <ServerApp /> */}
-     <ClientApp data={"vishaldsd"} />
+     <ClientApp data={"vishaldsd"} onClickHandler={clickMe}/>
+
+     <button onClick={() => clickMe("data from host app")}>host click</button>
      <h1>Next App</h1>
     </div>
   )
 }
+
+
+export default Home;

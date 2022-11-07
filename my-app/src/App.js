@@ -1,10 +1,12 @@
 import React from "react";
 
-function App({data}) {
+function App({data, onClickHandler}) {
+  console.log(onClickHandler);
   return (
     <h1>
         Hello React App
-        Passed props:: {data}
+        props:: {data}
+        <button onClick={() => onClickHandler("data from react remote app")}>Click Me</button>
     </h1>
   );
 }
