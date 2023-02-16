@@ -1,6 +1,6 @@
 {
   "name": "fe2",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "scripts": {
     "dev": "next dev -p 3002",
@@ -21,6 +21,3 @@
     "typescript": "^4.8.4"
   }
 }
-
-
-
