@@ -6,14 +6,10 @@ const nextConfig = {
   webpack: (config, options) => {
     config.plugins.push(
       new options.webpack.container.ModuleFederationPlugin({
-        name:"fe2",
-        filename: "remoteEntry2.js",
+        name:"fe1",
+        filename: "static/chunks/remoteEntry1.js",
         exposes: {
-          "./squareRoot": "./utils/getSquareRoot",
-        },
-        remotes: {
-          reactApp: "reactApp@http://localhost:3000/remoteEntry.js",
-          fe1: "fe1@http://localhost:3002/_next/server/static/chunks/remoteEntry1.js",
+          "./NextApp": "./pages/index.js",
         },
         shared: [
           {
@@ -34,6 +30,7 @@ const nextConfig = {
       })
 
     )
+    config.output.publicPath = "http://localhost:3002/";
     // config.module.rules.push({
     //   resolve: {
     //     alias: {

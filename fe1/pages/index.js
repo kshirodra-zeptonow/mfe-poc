@@ -4,18 +4,6 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import dynamic from 'next/dynamic'
 
-
-const ClientApp = dynamic(() => import('reactApp/App'), {
-  ssr: false,
-});
-
-const FE1 = dynamic(() => import('fe1/NextApp'), {
-  ssr: false,
-})
-
-// const ServerApp = React.lazy( () => import('reactApp/App'));
-
-
 const Home = () => {
   const clickMe = (data) => {
     alert(data)
@@ -23,10 +11,8 @@ const Home = () => {
   return (
     <div className={styles.container}>
      {/* <ServerApp /> */}
-     <ClientApp data={"vishaldsd"} onClickHandler={clickMe}/>
-    <FE1 />
      <button onClick={() => clickMe("data from host app")}>host click</button>
-     <h1>Next App</h1>
+     <h1>Next App - 1 ***###*</h1>
     </div>
   )
 }
